@@ -8,7 +8,7 @@ st.write("# 보험료 예측?????")
 # 첫번째 행
 r1_col1, r1_col2, r1_col3 = st.columns(3)
 
-age = r1_col1.number_input("age", step=1, value=23)
+age = r1_col1.number_input("age", step=1, value=23, min_value=1, max_value=100)
 
 bmi = r1_col2.number_input("bmi", value=34.40)
 
