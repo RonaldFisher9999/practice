@@ -3,28 +3,30 @@ import joblib
 import numpy as np
 
 # 헤드라인
-st.write("# 보험료 예측?????")
+st.write("# 보험료 예측")
 
 # 첫번째 행
 r1_col1, r1_col2, r1_col3 = st.columns(3)
 
-age = r1_col1.number_input("age (between 1~100)", step=1, value=23, min_value=1, max_value=100)
+age = r1_col1.number_input("age (between 1~100)", step=1, value=20, min_value=1, max_value=100)
 
-bmi = r1_col2.number_input("bmi", value=34.40)
+height = r1_col2.number_input("height (cm)", value=170)
+weight = r1_col2.number_input("weight (kg)", value=60)
+bmi = (height/100)**2 / weight
 
 children = r1_col3.number_input("children", step=1, value=0, min_value=0)
 
 # 두번째 행
 r2_col1, r2_col2, r2_col3 = st.columns(3)
 
-smoker = r2_col1.radio(label='smoker', options=("yes", "no"))
-if smoker == "yes" :
+smoker_option = r2_col1.radio(label='smoker', options=("yes", "no"))
+if smoker_option == "yes" :
     smoker = 1
 else :
     smoker = 0
 
-sex = r2_col2.radio(label='sex', options=("male", "female"))
-if sex == "male" :
+sex_option = r2_col2.radio(label='sex', options=("male", "female"))
+if sex_option == "male" :
     sex = 1
 else :
     sex = 0
