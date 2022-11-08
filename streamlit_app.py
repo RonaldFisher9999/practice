@@ -23,9 +23,11 @@ if smoker == "yes" :
 else :
     smoker = 0
 
-sex_option = ("male", "female")
-sex = r2_col2.selectbox("sex", sex_option)
-is_male = sex_option[0] == sex
+sex = r2_col2.radio(label='sex', options=("male", "female"))
+if sex == "male" :
+    sex = 1
+else :
+    sex = 0
 
 region_option = ('southwest', 'southeast', 'northwest', 'northeast')
 region = r2_col3.selectbox("region", region_option)
