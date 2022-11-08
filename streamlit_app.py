@@ -8,7 +8,7 @@ st.write("# 보험료 예측")
 # 첫번째 행
 r1_col1, r1_col2, r1_col3 = st.columns(3)
 
-age = r1_col1.number_input("나이 (1부터 100까지)", step=1, value=20, min_value=1, max_value=100)
+age = r1_col1.number_input("나이 (최대 100까지)", step=1, value=20, max_value=100)
 
 height = r1_col2.number_input("키 (cm)", step=None, value=170)
 weight = r1_col2.number_input("몸무게 (kg)", step=None, value=60)
@@ -31,8 +31,8 @@ if sex_option == "male" :
 else :
     sex = 0
 
-region_option = ('southwest', 'southeast', 'northwest', 'northeast')
-region = r2_col3.selectbox("region", region_option)
+region_option = ('서남', '동남', '서북', '동북')
+region = r2_col3.selectbox("거주 지역", region_option)
 is_southwest = region_option[0] == region
 is_southeast = region_option[1] == region
 is_northwest = region_option[2] == region
