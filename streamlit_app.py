@@ -18,7 +18,7 @@ children = r1_col3.number_input("children", step=1, value=0, min_value=0)
 r2_col1, r2_col2, r2_col3 = st.columns(3)
 
 r2_col1.write("smoker")
-smoker = r2_col1.st.radio(label='smoker', options=("yes", "no"))
+smoker = st.radio(label='smoker', options=("yes", "no"))
 if smoker == "yes" :
     smoker = 1
 else :
